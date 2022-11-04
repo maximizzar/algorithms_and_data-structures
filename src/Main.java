@@ -1,32 +1,35 @@
-import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
-
 public class Main {
     public static void main(String[] args) {
-        long start = System.nanoTime();
-        System.out.println(printTime(start, System.nanoTime()));
+        long start;
+        int repetitions = 10, length = 10000;
+
+        SortAlgo sortAlgo = new SortAlgo();
+        Times times = new Times();
 
         /*
             Sort Tests
          */
 
-        SortAlgo sortAlgo = new SortAlgo();
-        int[] arr = {1,2,3,4,5,7,6};
+        //bubbleSort
+        System.out.println("bubbleSort: ");
+        long bubbleSortDuration = 0L;
 
-        System.out.println(Arrays.toString(arr));
-        sortAlgo.insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
-
-
-    }
-
-    public static String printTime(long start, long end) {
-        long duration = end - start;
-        duration = 1000000;
-        if(duration > 1000) {
-            //return "Code took" + TimeUnit.NANOSECONDS.toMicros(duration) + "µs";
+        for (int i = 0; i < repetitions; i++) {
+            start = System.nanoTime();
+            sortAlgo.bubbleSort(sortAlgo.randomIntegerArray(length));
+            bubbleSortDuration += Math.toIntExact(System.nanoTime() - start);
         }
-        return "Code took " + duration + "ns";
+        times.printTimes(times.getTimes(Math.toIntExact(bubbleSortDuration / repetitions)));
 
+        //insertionSort
+        System.out.println("insertionSort: ");
+        long insertionSortDuration = 0L;
+
+        for (int i = 0; i < repetitions; i++) {
+            start = System.nanoTime();
+            sortAlgo.insertionSort(sortAlgo.randomIntegerArray(length));
+            insertionSortDuration += Math.toIntExact(System.nanoTime() - start);
+        }
+        times.printTimes(times.getTimes(Math.toIntExact(insertionSortDuration / repetitions)));
     }
 }

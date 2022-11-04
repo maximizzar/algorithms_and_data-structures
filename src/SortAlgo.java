@@ -1,5 +1,7 @@
+import java.util.Random;
 public class SortAlgo {
-    public void bubbleSort(int[] arr) {
+    private final Random random = new Random();
+    public void bubbleSort(Integer[] arr) {
             for (int i = 0; i < arr.length; i++) {
                 boolean sorted = true;
                 for (int j = 0; j < arr.length - 1; j++) {
@@ -13,7 +15,7 @@ public class SortAlgo {
                 if (sorted) break;
             }
         }
-        public void insertionSort(int[] A) {
+        public void insertionSort(Integer[] A) {
             for (int j = 2; j < A.length; j++) {
                 int key = A[j];
                 int i = j - 1;
@@ -28,4 +30,12 @@ public class SortAlgo {
         public void mergeSort(int[] A, int p, int r) {
 
         }
+    public Integer[] randomIntegerArray(Integer length) {
+        Integer[] integers = new Integer[length];
+
+        for (int i = 0; i < integers.length; i++) {
+            integers[i] = random.nextInt();
+        }
+        return integers;
+    }
 }

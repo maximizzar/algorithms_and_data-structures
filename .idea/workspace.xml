@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="put SortAlgos into SortAlgo class">
-      <change afterPath="$PROJECT_DIR$/src/SearchAlgo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Times.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortAlgo.java" afterDir="false" />
@@ -31,14 +31,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maximizzar/IdeaProjects/algorithms_and_data-structures&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/maximizzar/IdeaProjects/algorithms_and_data-structures"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Hi Mom!" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -60,6 +64,8 @@
       <workItem from="1667317890511" duration="342000" />
       <workItem from="1667318663018" duration="311000" />
       <workItem from="1667318986333" duration="4400000" />
+      <workItem from="1667326071793" duration="319000" />
+      <workItem from="1667583992332" duration="8570000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1667316672072</created>
