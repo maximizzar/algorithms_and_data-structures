@@ -14,4 +14,5 @@ public class Times {
         integers[3] = Math.toIntExact(TimeUnit.NANOSECONDS.toSeconds(duration) % 1000);
         return integers;
     }
+    // Counter hinzufügen
 }
