@@ -27,9 +27,10 @@ public class SortAlgo {
                 A[i + 1] = key;
             }
         }
-        public void mergeSort(int[] A, int p, int r) {
+        public void mergeSort(Integer[] arr, Integer indexLeft, Integer indexRight) {
+            System.out.println("Hi Mom! No Code here, sorry...");
 
-        }
+    }
     public Integer[] randomIntegerArray(Integer length) {
         Integer[] integers = new Integer[length];
 

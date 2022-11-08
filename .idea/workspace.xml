@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="put SortAlgos into SortAlgo class">
-      <change afterPath="$PROJECT_DIR$/src/Times.java" afterDir="false" />
+    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="update Übung 1">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InitTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortAlgo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/maximizzar/IdeaProjects/algorithms_and_data-structures"
   }
@@ -66,6 +69,8 @@
       <workItem from="1667318986333" duration="4400000" />
       <workItem from="1667326071793" duration="319000" />
       <workItem from="1667583992332" duration="8570000" />
+      <workItem from="1667921698078" duration="756000" />
+      <workItem from="1667924870533" duration="2302000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1667316672072</created>
