@@ -23,25 +23,29 @@ public class Main {
 
         //bubbleSort
         System.out.println("bubbleSort: ");
+
+        @SuppressWarnings("WrapperTypeMayBePrimitive")
         Long bubbleSortDuration = 0L;
 
         for (int i = 0; i < initTests.getRepetitions(); i++) {
             initTests.setTestStart();
             sortAlgo.bubbleSort(sortAlgo.randomIntegerArray(initTests.getArraySize()));
-            bubbleSortDuration += Math.toIntExact(System.nanoTime() - initTests.getTestStart());
+            bubbleSortDuration += System.nanoTime() - initTests.getTestStart();
         }
         times.printTimes(times.getTimes(Math.toIntExact(bubbleSortDuration / initTests.getRepetitions())));
 
 
         //insertionSort
         System.out.println("insertionSort: ");
-        int insertionSortDuration = 0;
+
+        @SuppressWarnings("WrapperTypeMayBePrimitive")
+        Long insertionSortDurations = 0L;
 
         for (int i = 0; i < initTests.getRepetitions(); i++) {
             initTests.setTestStart();
             sortAlgo.insertionSort(sortAlgo.randomIntegerArray(initTests.getArraySize()));
-            insertionSortDuration += Math.toIntExact(System.nanoTime() - initTests.getTestStart());
+            insertionSortDurations += System.nanoTime() - initTests.getTestStart();
         }
-        times.printTimes(times.getTimes(Math.toIntExact(insertionSortDuration / initTests.getRepetitions())));
+        times.printTimes(times.getTimes(Math.toIntExact(insertionSortDurations / initTests.getRepetitions())));
     }
 }

@@ -1,6 +1,7 @@
 public class InitTests {
     private Integer repetitions, arraySize;
     private Long testStart;
+    private Times[] times;
 
     public InitTests(Integer repetitions, Integer arraySize) {
         setRepetitions(repetitions);
