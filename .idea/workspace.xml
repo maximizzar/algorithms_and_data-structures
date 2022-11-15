@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="Times class version 1">
+    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="hot fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchAlgo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortAlgo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +70,10 @@
       <workItem from="1667921698078" duration="756000" />
       <workItem from="1667924870533" duration="4082000" />
       <workItem from="1668265084110" duration="2687000" />
+      <workItem from="1668513366244" duration="468000" />
+      <workItem from="1668527187974" duration="99000" />
+      <workItem from="1668528000201" duration="332000" />
+      <workItem from="1668528345334" duration="5204000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1667316672072</created>

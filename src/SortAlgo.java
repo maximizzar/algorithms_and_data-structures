@@ -38,11 +38,25 @@ public class SortAlgo {
             mergeSort(arr, indexLeft, center);
         }
     }
+    public void countingSort(Integer[] arr, Integer biggestInteger) {
+        Integer[] counter = new Integer[biggestInteger + 1];
+        Integer[] integers = new Integer[arr.length];
+
+        for (int i = 0; i <= arr.length; i++) counter[arr[i]]++;
+        for (int i = 1; i <= biggestInteger; i++) counter[arr[i]] = counter[i] + counter[i - 1];
+        for (int i = 0; i <= biggestInteger ; i++) {
+            integers[counter[arr[i]] - 1] = arr[i];
+            counter[arr[i]]--;
+        }
+    }
+    public void radixSort(Integer[] arr) {
+
+    }
     public Integer[] randomIntegerArray(Integer length) {
         Integer[] integers = new Integer[length];
 
         for (int i = 0; i < integers.length; i++) {
-            integers[i] = random.nextInt();
+            integers[i] = random.nextInt(412) + 100;
         }
         return integers;
     }

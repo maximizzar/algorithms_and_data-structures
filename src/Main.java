@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         InitTests initTests = new InitTests(8, 8192);
+        //SearchAlgo searchAlgo = new SearchAlgo();
         SortAlgo sortAlgo = new SortAlgo();
         Times times = new Times();
         Scanner scanner = new Scanner(System.in);
@@ -47,5 +48,12 @@ public class Main {
             insertionSortDurations += System.nanoTime() - initTests.getTestStart();
         }
         times.printTimes(times.getTimes(Math.toIntExact(insertionSortDurations / initTests.getRepetitions())));
+
+        //mergeSort
+
+
+        //counting Sort
+
+
     }
 }

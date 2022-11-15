@@ -9,7 +9,11 @@ public class SearchAlgo {
         }
         return - 1;
     }
-    public Integer binarySearch(Integer[] arr, Integer l, Integer r) {
+    public Integer binarySearch(Integer[] arr, Integer l, Integer r, Integer key) {
+        if(Objects.equals(arr[r/2], key)) return r/2;
+
+        if(arr[r/2] > key) binarySearch(arr, l, r/2,key);
+        binarySearch(arr, r/2 -1, r,key);
 
         return -1;
     }
