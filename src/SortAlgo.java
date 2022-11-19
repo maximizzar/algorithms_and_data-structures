@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 public class SortAlgo {
     private final Random random = new Random();
@@ -16,16 +17,16 @@ public class SortAlgo {
         }
     }
 
-    public void insertionSort(Integer[] A) {
-        for (int j = 2; j < A.length; j++) {
-            int key = A[j];
+    public void insertionSort(Integer[] arr) {
+        for (int j = 2; j < arr.length; j++) {
+            int key = arr[j];
             int i = j - 1;
 
-            while (i > 0 && A[i] > key) {
-                A[i + 1] = A[i];
+            while (i > 0 && arr[i] > key) {
+                arr[i + 1] = arr[i];
                 i = i - 1;
             }
-            A[i + 1] = key;
+            arr[i + 1] = key;
         }
     }
 
@@ -38,16 +39,30 @@ public class SortAlgo {
             mergeSort(arr, indexLeft, center);
         }
     }
-    public void countingSort(Integer[] arr, Integer biggestInteger) {
-        Integer[] counter = new Integer[biggestInteger + 1];
-        Integer[] integers = new Integer[arr.length];
+    public int[] countingSort(Integer[] array, Integer biggestInt) {
+        System.out.print("array: ");
+        int[] c = new int[biggestInt + 1];
+        int[] output = new int[array.length];
 
-        for (int i = 0; i <= arr.length; i++) counter[arr[i]]++;
-        for (int i = 1; i <= biggestInteger; i++) counter[arr[i]] = counter[i] + counter[i - 1];
-        for (int i = 0; i <= biggestInteger ; i++) {
-            integers[counter[arr[i]] - 1] = arr[i];
-            counter[arr[i]]--;
+        //count numbers in array
+        for (Integer value : array) c[value]++;
+
+        //accumulate numbers in c
+        for (int i = 1; i <= biggestInt; i++) {
+            c[i] = c[i - 1] + c[i];
+            /*
+                i   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                c1: [2, 1, 1, 1, 1, 1, 1, 1, 1, 6]
+
+                c1: [2, 3, 4, 5, 6, 7, 8, 9,10,16]
+             */
         }
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            output[c[array[i]] - 1] = array[i];
+            c[array[i]]--;
+        }
+        return output;
     }
     public void radixSort(Integer[] arr) {
 
