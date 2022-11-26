@@ -1,6 +1,7 @@
 import java.util.Random;
 public class SortAlgo {
     private static final Random random = new Random();
+
     public Integer[] bubbleSort(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
             boolean sorted = true;
@@ -29,10 +30,11 @@ public class SortAlgo {
             arr[i + 1] = key;
         }
     }
+
     //Sort
-    public void mergeSort(Integer[] arr) {
+    public Integer[] mergeSort(Integer[] arr) {
         if (arr.length <= 1) {
-            return;
+            return arr;
         }
 
         Integer center = arr.length / 2;
@@ -49,26 +51,29 @@ public class SortAlgo {
         mergeSort(left);
         mergeSort(right);
 
+        return merge(left, right);
     }
+
     //Merge
-    public static void merge(Integer[] left, Integer[] right) {
+    public static Integer[] merge(Integer[] left, Integer[] right) {
         Integer[] result = new Integer[left.length + right.length];
         int leftIndex = 0;
         int rightIndex = 0;
         int resultIndex = 0;
         while (leftIndex < left.length || rightIndex < right.length) {
             if (leftIndex < left.length && rightIndex < right.length) {
-                if(left[leftIndex] <= right[rightIndex]) {
+                if (left[leftIndex] <= right[rightIndex]) {
                     result[resultIndex++] = left[leftIndex++];
-                }else {
-                    result[resultIndex++] = left[rightIndex++];
+                } else {
+                    result[resultIndex++] = right[rightIndex++];
                 }
-            }   else if (leftIndex < left.length) {
+            } else if (leftIndex < left.length) {
                 result[resultIndex++] = left[leftIndex++];
-            }   else if (rightIndex < right.length) {
-                result[resultIndex++] = right[rightIndex];
+            } else if (rightIndex < right.length) {
+                result[resultIndex++] = right[rightIndex++];
             }
         }
+        return result;
     }
 
     public int[] countingSort(Integer[] array, Integer biggestInt) {
@@ -89,77 +94,88 @@ public class SortAlgo {
         }
         return output;
     }
+
     public void radixSort(Integer[] arr) {
 
     }
 
-    public  <T> void heapsort(Integer[] arr) {
+    public static void heapsort(Integer[] arr) {
+        if (arr == null) return;
         int heapSize = arr.length;
-        buildHeap(arr, heapSize);
-        while (heapSize > 1) {
-            Heapswap(arr, 0, heapSize - 1);
-            heapSize--;
-            heapify(arr, heapSize, 0);
-        }
-    }
-    public static <T> void buildHeap(Integer[] arr, int heapSize) {
-        for (int i = (int) (arr.length / 2); i >= 0; i++) {
+
+        for (int i = Math.max(0, (heapSize / 2) - 1); i >= 0; i--) {
             heapify(arr, heapSize, i);
         }
-    }
-    public static <T> void heapify(Integer[] arr, int heapSize, int i) {
-        int left = i * 2 +1;
-        int right = i * 2 + 2;
-        int largest ;
-        if (left < heapSize && arr[left].compareTo(arr[i]) > 0)
-            largest = left;
-        else largest = i;
-        if (right < heapSize && arr[right].compareTo(arr[largest]) > 0) {
-            largest = right;
+        for (int i = heapSize -1; i >= 0; i--) {
+            Heapswap(arr, 0 , i);
+            heapify(arr, i ,0);
+
         }
-        if (largest != i) {
-            Heapswap(arr, i, largest);
-            heapify(arr, heapSize, largest);
+    }
+
+    public static void heapify(Integer[] arr, int heapSize, int i) {
+        while (true) {
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            int largest = i;
+
+            //right child > parent
+            if (right < heapSize && arr[right] > arr[largest]) largest = right;
+            //left child > parent
+            if (left < heapSize && arr[left] > arr[largest]) largest = left;
+
+            //move to next lower Tree
+            if (largest != i) {
+                Heapswap(arr, largest, i);
+                i = largest;
+            } else break;
         }
     }
 //End Heap
 
+
     //Quick
-    private static <T> int partition (Integer[] arr, int left, int right) {
-        Integer pivot = arr[right];
-        int mid = left;
-        for (int i = mid; i < right; i++) {
-            if (arr[i].compareTo(pivot) <= 0) {
-                Quickswap(arr, i, mid++);
-            }
+    public static void randomizedQuicksort(Integer[] arr) {
+        randomizedQuicksort(arr, 0, arr.length - 1);
+
+    }
+
+    public static void randomizedQuicksort(Integer[] arr, int lowIndex, int highIndex) {
+        if (lowIndex >= highIndex) return;
+        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
+        int pivot = arr[pivotIndex];
+        Quickswap(arr, pivotIndex, highIndex);
+        int leftPointer = partition(arr, lowIndex, highIndex, pivot);
+
+        randomizedQuicksort(arr, lowIndex, leftPointer - 1);
+        randomizedQuicksort(arr, leftPointer + 1, highIndex);
+
+    }
+
+    private static int partition(Integer[] arr, int lowIndex, int highIndex, int pivot) {
+        int leftPointer = lowIndex;
+        int rightPointer = highIndex;
+
+        while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
+            leftPointer++;
         }
-        Quickswap(arr, right, mid);
-        return mid;
-    }
-    public  <T> void randomizedQuicksort(Integer[] arr) {
-        randomizedQuicksort(arr, 0, arr.length -1);
-    }
-    public  <T> void randomizedQuicksort(Integer[] arr, int left, int right) {
-        if (left < right) {
-            int pivot = randomPartition(arr, left, right);
-            randomizedQuicksort(arr, left, pivot -1);
-            randomizedQuicksort(arr, pivot +1, right);
+        while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
+            leftPointer--;
         }
-    }
-    public static <T> int randomPartition(Integer[] arr, int left, int right) {
-        int pivot = left + random.nextInt(right - left);
-        Quickswap(arr, right, pivot);
-        return partition(arr, left, right);
+        Quickswap(arr, leftPointer, rightPointer);
+        Quickswap(arr, leftPointer, highIndex);
+        return leftPointer;
     }
 //End Quick
 
     //Swap
-    public static <T> void Heapswap (Integer[] arr, int a, int b) {
-        Integer temp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
+    public static void Heapswap(Integer[] arr, int i, int j) {
+        Integer temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
-    public static <T> void Quickswap (Integer[] arr, int a, int b) {
+
+    public static void Quickswap(Integer[] arr, int a, int b) {
         if (a != b) {
             Integer temp = arr[a];
             arr[a] = arr[b];
@@ -167,3 +183,4 @@ public class SortAlgo {
         }
     }
 }
+
