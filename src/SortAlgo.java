@@ -30,16 +30,49 @@ public class SortAlgo {
         }
     }
 
-    public void mergeSort(Integer[] arr, Integer indexLeft, Integer indexRight) {
+    //Sort
+    public void mergeSort(Integer[] arr) {
+        if (arr.length <= 1) {
+            return;
+        }
+
+        Integer center = arr.length / 2;
+        Integer[] left = new Integer[center];
+        Integer[] right = new Integer[arr.length - center];
+
+        for (int i = 0; i < left.length; i++) {
+            left[i] = arr[i];
+        }
+        for (int i = 0; i < right.length; i++) {
+            right[i] = arr[i + left.length];
+        }
+
+        mergeSort(left);
+        mergeSort(right);
 
     }
-
-    public void randomizedQuicksort(Integer[] arr) {
-
+    //Merge
+    public static void merge(Integer[] left, Integer[] right) {
+        Integer[] result = new Integer[left.length + right.length];
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int resultIndex = 0;
+        while (leftIndex < left.length || rightIndex < right.length) {
+            if (leftIndex < left.length && rightIndex < right.length) {
+                if(left[leftIndex] <= right[rightIndex]) {
+                    result[resultIndex++] = left[leftIndex++];
+                }else {
+                    result[resultIndex++] = left[rightIndex++];
+                }
+            }   else if (leftIndex < left.length) {
+                result[resultIndex++] = left[leftIndex++];
+            }   else if (rightIndex < right.length) {
+                result[resultIndex++] = right[rightIndex];
+            }
+        }
     }
 
     public int[] countingSort(Integer[] array, Integer biggestInt) {
-        //buggy
         int[] c = new int[biggestInt + 1];
         int[] output = new int[array.length];
 
@@ -61,7 +94,77 @@ public class SortAlgo {
 
     }
 
-    public void heapsort(Integer[] arr) {
+       public  <T> void heapsort(Integer[] arr) {
+        int heapSize = arr.length;
+        buildHeap(arr, heapSize);
+        while (heapSize > 1) {
+            Heapswap(arr, 0, heapSize - 1);
+            heapSize--;
+            heapify(arr, heapSize, 0);
+        }
+    }
+    public static <T> void buildHeap(Integer[] arr, int heapSize) {
+        for (int i = (int) (arr.length / 2); i >= 0; i++) {
+            heapify(arr, heapSize, i);
+        }
+    }
+    public static <T> void heapify(Integer[] arr, int heapSize, int i) {
+        int left = i * 2 +1;
+        int right = i * 2 + 2;
+        int largest ;
+        if (left < heapSize && arr[left].compareTo(arr[i]) > 0)
+            largest = left;
+        else largest = i;
+        if (right < heapSize && arr[right].compareTo(arr[largest]) > 0) {
+            largest = right;
+        }
+        if (largest != i) {
+            Heapswap(arr, i, largest);
+            heapify(arr, heapSize, largest);
+        }
+    }
+//End Heap
 
+    //Quick
+    private static <T> int partition (Integer[] arr, int left, int right) {
+        Integer pivot = arr[right];
+        int mid = left;
+        for (int i = mid; i < right; i++) {
+            if (arr[i].compareTo(pivot) <= 0) {
+                Quickswap(arr, i, mid++);
+            }
+        }
+        Quickswap(arr, right, mid);
+        return mid;
+    }
+    public  <T> void randomizedQuicksort(Integer[] arr) {
+        randomizedQuicksort(arr, 0, arr.length -1);
+    }
+    public  <T> void randomizedQuicksort(Integer[] arr, int left, int right) {
+        if (left < right) {
+            int pivot = randomPartition(arr, left, right);
+            randomizedQuicksort(arr, left, pivot -1);
+            randomizedQuicksort(arr, pivot +1, right);
+        }
+    }
+    public static <T> int randomPartition(Integer[] arr, int left, int right) {
+        int pivot = left + random.nextInt(right - left);
+        Quickswap(arr, right, pivot);
+        return partition(arr, left, right);
+    }
+//End Quick
+
+    //Swap Classes
+    public static <T> void Heapswap (Integer[] arr, int a, int b) {
+        Integer temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+    public static <T> void Quickswap (Integer[] arr, int a, int b) {
+        if (a != b) {
+            Integer temp = arr[a];
+            arr[a] = arr[b];
+            arr[b] = temp;
+        }
     }
 }
