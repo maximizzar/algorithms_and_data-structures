@@ -2,10 +2,10 @@ import java.util.concurrent.TimeUnit;
 public class Times {
     public String toString(Integer[] integers) {
         String RETURN = "";
-        RETURN += integers[3] + "-";
-        RETURN += integers[2] + "-";
-        RETURN += integers[1] + "-";
-        RETURN += integers[0] + "-";
+        RETURN += integers[3] + "s ";
+        RETURN += integers[2] + "ms ";
+        RETURN += integers[1] + "µs ";
+        RETURN += integers[0] + "ns";
         return RETURN;
     }
     public void printTimes(Integer[] integers) {

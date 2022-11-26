@@ -11,19 +11,19 @@ public class Test {
         @SuppressWarnings("WrapperTypeMayBePrimitive")
         Long startTime = System.nanoTime();
 
-        sortAlgo.mergeSort(arrayPreSortedAscending(length,min,max),0,length);
+        sortAlgo.mergeSort(arrayPreSortedAscending(length,min,max));
         Integer[] preSortedAscending =
                 times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
 
         //PreSortedDescending
         startTime = System.nanoTime();
-        sortAlgo.mergeSort(arrayPreSortedDescending(length,min,max),0,length);
+        sortAlgo.mergeSort(arrayPreSortedDescending(length,min,max));
         Integer[] preSortedDescending =
                 times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
 
         //Unsorted
         startTime = System.nanoTime();
-        sortAlgo.mergeSort(arrayUnsorted(length,min,max),0,length);
+        sortAlgo.mergeSort(arrayUnsorted(length,min,max));
         Integer[] unsorted =
                 times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
 
@@ -63,7 +63,7 @@ public class Test {
 
         return RETURN;
     }
-    public Integer[][] coutingSort(Integer length, Integer min, Integer max) {
+    public Integer[][] countingSort(Integer length, Integer min, Integer max) {
 
         //PreSortedAscending
         @SuppressWarnings("WrapperTypeMayBePrimitive")

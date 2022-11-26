@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="max und length sorgen für crash">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortAlgo.java" afterDir="false" />
+    <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="first printout">
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +73,7 @@
       <workItem from="1668528345334" duration="5204000" />
       <workItem from="1669041941490" duration="50000" />
       <workItem from="1669114018001" duration="27000" />
-      <workItem from="1669481378468" duration="8022000" />
+      <workItem from="1669481378468" duration="11313000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1667316672072</created>
@@ -148,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669493176523</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="array gen done">
+      <created>1669493992552</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669493992552</updated>
+    </task>
+    <task id="LOCAL-00012" summary="first printout">
+      <created>1669497129394</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669497129394</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +186,8 @@
     <MESSAGE value="random" />
     <MESSAGE value="comment out unnfinished methodcalls" />
     <MESSAGE value="max und length sorgen für crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="max und length sorgen für crash" />
+    <MESSAGE value="array gen done" />
+    <MESSAGE value="first printout" />
+    <option name="LAST_COMMIT_MESSAGE" value="first printout" />
   </component>
 </project>
