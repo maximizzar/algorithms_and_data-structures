@@ -31,13 +31,7 @@ public class SortAlgo {
     }
 
     public void mergeSort(Integer[] arr, Integer indexLeft, Integer indexRight) {
-        if (indexRight - indexLeft > 1) {
 
-            Integer center = indexRight / 2;
-
-            mergeSort(arr, center , indexRight);
-            mergeSort(arr, indexLeft, center);
-        }
     }
 
     public void randomizedQuicksort(Integer[] arr) {
@@ -45,6 +39,7 @@ public class SortAlgo {
     }
 
     public int[] countingSort(Integer[] array, Integer biggestInt) {
+        //buggy
         int[] c = new int[biggestInt + 1];
         int[] output = new int[array.length];
 
@@ -68,14 +63,5 @@ public class SortAlgo {
 
     public void heapsort(Integer[] arr) {
 
-    }
-
-    public Integer[] randomIntegerArray(Integer length) {
-        Integer[] integers = new Integer[length];
-
-        for (int i = 0; i < integers.length; i++) {
-            integers[i] = random.nextInt(412) + 100;
-        }
-        return integers;
     }
 }
