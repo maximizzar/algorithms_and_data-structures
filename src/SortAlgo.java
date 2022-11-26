@@ -1,7 +1,7 @@
 import java.util.Random;
 public class SortAlgo {
     private final Random random = new Random();
-    public void bubbleSort(Integer[] arr) {
+    public Integer[] bubbleSort(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
             boolean sorted = true;
             for (int j = 0; j < arr.length - 1; j++) {
@@ -14,6 +14,7 @@ public class SortAlgo {
             }
             if (sorted) break;
         }
+        return arr;
     }
 
     public void insertionSort(Integer[] arr) {
