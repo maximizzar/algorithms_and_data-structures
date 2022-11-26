@@ -1,11 +1,19 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hi mom");
-        System.out.println();
-
         Test test = new Test();
+        Integer length = 100, min = 1, max = 100;
 
-        Integer length = 10, min = 1, max = 10;
+        System.out.println(Arrays.deepToString(test.coutingSort(length, min, max)));
+        System.out.println(Arrays.deepToString(test.coutingSort(length, min, max)));
+        //System.out.println(Arrays.toString(test.arrayPreSortedAscending(length)));
+        //System.out.println(Arrays.toString(test.arrayPreSortedDescending(length)));
+        //System.out.println(Arrays.toString(test.arrayUnsorted(length,min,max)));
+
+
+
+        System.exit(0);
 
         for (int i = 0; i < 5; i++) {
             if(i == 0)          length = 10;
@@ -25,7 +33,6 @@ public class Main {
                 //test.randomizedQuicksort(length,min,max);
                 //test.coutingSort(length,min,max);
                 //test.heapsort(length,min,max);
-                System.out.println(i + "," + j);
             }
         }
     }

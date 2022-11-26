@@ -44,7 +44,6 @@ public class SortAlgo {
     }
 
     public int[] countingSort(Integer[] array, Integer biggestInt) {
-        System.out.print("array: ");
         int[] c = new int[biggestInt + 1];
         int[] output = new int[array.length];
 
@@ -54,12 +53,6 @@ public class SortAlgo {
         //accumulate numbers in c
         for (int i = 1; i <= biggestInt; i++) {
             c[i] = c[i - 1] + c[i];
-            /*
-                i   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-                c1: [2, 1, 1, 1, 1, 1, 1, 1, 1, 6]
-
-                c1: [2, 3, 4, 5, 6, 7, 8, 9,10,16]
-             */
         }
 
         for (int i = array.length - 1; i >= 0; i--) {
@@ -75,6 +68,7 @@ public class SortAlgo {
     public void heapsort(Integer[] arr) {
 
     }
+
     public Integer[] randomIntegerArray(Integer length) {
         Integer[] integers = new Integer[length];
 
