@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("hi mom");
+        System.out.println();
+
         Test test = new Test();
 
         Integer length = 10, min = 1, max = 10;
@@ -19,10 +21,11 @@ public class Main {
                 else if (j == 3)    max = 100000;
                 else max = Integer.MAX_VALUE;
 
-                test.mergeSort(length,min,max);
-                test.randomizedQuicksort(length,min,max);
-                test.coutingSort(length,min,max);
-                test.heapsort(length,min,max);
+                //test.mergeSort(length,min,max);
+                //test.randomizedQuicksort(length,min,max);
+                //test.coutingSort(length,min,max);
+                //test.heapsort(length,min,max);
+                System.out.println(i + "," + j);
             }
         }
     }
