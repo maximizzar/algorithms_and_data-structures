@@ -1,9 +1,8 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Test test = new Test();
         Times times = new Times();
+        @SuppressWarnings("WrapperTypeMayBePrimitive")
         Integer length = 10, min = 1, max = 10;
 
 
@@ -25,7 +24,7 @@ public class Main {
 
                 Integer[][] LUL1 = test.mergeSort(length, min, max);
                 Integer[][] LUL2 = test.randomizedQuicksort(length, min, max);
-                Integer[][] LUL3 = test.coutingSort(length, min, max);
+                Integer[][] LUL3 = test.countingSort(length, min, max);
                 Integer[][] LUL4 = test.heapsort(length, min, max);
 
                 System.out.println(length + " ; " + "PreSortedAscending"    + " ; " + min + " - " + max +
