@@ -1,5 +1,13 @@
 import java.util.concurrent.TimeUnit;
 public class Times {
+    public String toString(Integer[] integers) {
+        String RETURN = "";
+        RETURN += integers[3] + "-";
+        RETURN += integers[2] + "-";
+        RETURN += integers[1] + "-";
+        RETURN += integers[0] + "-";
+        return RETURN;
+    }
     public void printTimes(Integer[] integers) {
         if(integers[3] != 0) System.out.printf("%3d  s ", integers[3]);
         if(integers[2] != 0) System.out.printf("%3d ms ", integers[2]);
@@ -14,5 +22,4 @@ public class Times {
         integers[3] = Math.toIntExact(TimeUnit.NANOSECONDS.toSeconds(duration) % 1000);
         return integers;
     }
-    // Counter hinzufügen
 }
