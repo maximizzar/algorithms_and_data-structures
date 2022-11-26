@@ -1,9 +1,6 @@
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.logging.Logger;
-
 public class Main {
     public static void main(String[] args) {
+        System.out.println("hi mom");
         Test test = new Test();
 
         Integer length = 10, min = 1, max = 10;
@@ -24,7 +21,8 @@ public class Main {
 
                 test.mergeSort(length,min,max);
                 test.randomizedQuicksort(length,min,max);
-
+                test.coutingSort(length,min,max);
+                test.heapsort(length,min,max);
             }
         }
     }

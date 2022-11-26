@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 public class SortAlgo {
     private final Random random = new Random();
@@ -39,6 +38,11 @@ public class SortAlgo {
             mergeSort(arr, indexLeft, center);
         }
     }
+
+    public void randomizedQuicksort(Integer[] arr) {
+
+    }
+
     public int[] countingSort(Integer[] array, Integer biggestInt) {
         System.out.print("array: ");
         int[] c = new int[biggestInt + 1];
@@ -65,6 +69,10 @@ public class SortAlgo {
         return output;
     }
     public void radixSort(Integer[] arr) {
+
+    }
+
+    public void heapsort(Integer[] arr) {
 
     }
     public Integer[] randomIntegerArray(Integer length) {
