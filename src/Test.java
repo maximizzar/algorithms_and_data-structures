@@ -134,10 +134,7 @@ public class Test {
         return RETURN;
     }
 
-    /*
-        array init
-     */
-
+    //array gen
     public Integer[] arrayPreSortedAscending(Integer length, Integer min, Integer max) {
         return sortAlgo.mergeSort(arrayUnsorted(length,min,max));
     }

@@ -1,7 +1,6 @@
 import java.util.Random;
 public class SortAlgo {
     private static final Random random = new Random();
-
     public Integer[] bubbleSort(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
             boolean sorted = true;
@@ -17,7 +16,6 @@ public class SortAlgo {
         }
         return arr;
     }
-
     public void insertionSort(Integer[] arr) {
         for (int j = 2; j < arr.length; j++) {
             int key = arr[j];
@@ -30,7 +28,6 @@ public class SortAlgo {
             arr[i + 1] = key;
         }
     }
-
     //Sort
     public Integer[] mergeSort(Integer[] arr) {
         if (arr.length <= 1) {
@@ -54,7 +51,6 @@ public class SortAlgo {
         merge(arr, left, right);
         return arr;
     }
-
     //Merge
     private static void merge(Integer[] arr, Integer[] left, Integer[] right) {
         int leftIndex = 0;
@@ -100,11 +96,9 @@ public class SortAlgo {
         }
         return output;
     }
-
     public void radixSort(Integer[] arr) {
 
     }
-
     public static Integer[] heapsort(Integer[] arr) {
         if (arr == null) return arr;
         int heapSize = arr.length;
@@ -119,7 +113,6 @@ public class SortAlgo {
         }
         return arr;
     }
-
     public static void heapify(Integer[] arr, int heapSize, int i) {
         while (true) {
             int left = 2 * i + 1;
@@ -140,7 +133,6 @@ public class SortAlgo {
     }
 //End Heap
 
-
     //Quick
     public Integer[] randomizedQuicksort(Integer[] arr) {
          randomizedQuicksort(arr, 0, arr.length - 1);
@@ -158,7 +150,6 @@ public class SortAlgo {
         randomizedQuicksort(arr, leftPointer + 1, highIndex);
 
     }
-
     private static int partition(Integer[] arr, int lowIndex, int highIndex, int pivot) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
@@ -191,4 +182,3 @@ public class SortAlgo {
         }
     }
 }
-
