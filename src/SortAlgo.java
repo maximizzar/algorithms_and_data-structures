@@ -142,8 +142,8 @@ public class SortAlgo {
 
 
     //Quick
-    public static Integer[] randomizedQuicksort(Integer[] arr) {
-        randomizedQuicksort(arr, 0, arr.length - 1);
+    public Integer[] randomizedQuicksort(Integer[] arr) {
+         randomizedQuicksort(arr, 0, arr.length - 1);
     return arr;
     }
 
@@ -162,14 +162,15 @@ public class SortAlgo {
     private static int partition(Integer[] arr, int lowIndex, int highIndex, int pivot) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
-
+    while (leftPointer < rightPointer) {
         while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
             leftPointer++;
         }
-        while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
-            leftPointer--;
+        while (arr[rightPointer] >= pivot && leftPointer < rightPointer) {
+            rightPointer--;
         }
         Quickswap(arr, leftPointer, rightPointer);
+    }
         Quickswap(arr, leftPointer, highIndex);
         return leftPointer;
     }
