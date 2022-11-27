@@ -24,23 +24,6 @@ public class Main {
                 //else if (j == 3)    max = 100000;
                 //else max = Integer.MAX_VALUE - 1;
 
-                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayUnsorted(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedAscending(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedDescending(length, min, max))));
-                System.out.println();
-                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayUnsorted(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedAscending(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedDescending(length, min, max))));
-                System.out.println();
-                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayUnsorted(length, min, max),max)));
-                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedAscending(length, min, max),max)));
-                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedDescending(length, min, max), max)));
-                System.out.println();
-                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayUnsorted(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedAscending(length, min, max))));
-                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedDescending(length, min, max))));
-                System.out.println();
-
                 Integer[][] LUL1 = test.mergeSort(length, min, max);
                 Integer[][] LUL2 = test.randomizedQuicksort(length, min, max);
                 Integer[][] LUL3 = test.countingSort(length, min, max);
@@ -52,18 +35,18 @@ public class Main {
                         " ; " + times.toString(LUL3[0]) +
                         " ; " + times.toString(LUL4[0]));
 
-
-
                 System.out.println(length + " ; " + "PreSortedDescending"   + " ; " + min + " - " + max +
                         " ; " + times.toString(LUL1[1]) +
                         " ; " + times.toString(LUL2[1]) +
                         " ; " + times.toString(LUL3[1]) +
                         " ; " + times.toString(LUL4[1]));
+
                 System.out.println(length + " ; " + "Unsorted"              + " ; " + min + " - " + max +
                         " ; " + times.toString(LUL1[2]) +
                         " ; " + times.toString(LUL2[2]) +
                         " ; " + times.toString(LUL3[2]) +
                         " ; " + times.toString(LUL4[2]));
+
                 System.out.println();
             }
             System.gc();
