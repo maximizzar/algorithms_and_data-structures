@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Test test = new Test();
+        SortAlgo sortAlgo = new SortAlgo();
         Times times = new Times();
         Integer length = 10, min = 1, max = 1000;
 
@@ -23,7 +24,22 @@ public class Main {
                 //else if (j == 3)    max = 100000;
                 //else max = Integer.MAX_VALUE - 1;
 
-
+                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayUnsorted(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedAscending(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedDescending(length, min, max))));
+                System.out.println();
+                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayUnsorted(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedAscending(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedDescending(length, min, max))));
+                System.out.println();
+                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayUnsorted(length, min, max),max)));
+                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedAscending(length, min, max),max)));
+                System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedDescending(length, min, max), max)));
+                System.out.println();
+                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayUnsorted(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedAscending(length, min, max))));
+                System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedDescending(length, min, max))));
+                System.out.println();
 
                 Integer[][] LUL1 = test.mergeSort(length, min, max);
                 Integer[][] LUL2 = test.randomizedQuicksort(length, min, max);
