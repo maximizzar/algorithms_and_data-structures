@@ -1,25 +1,25 @@
 import java.util.concurrent.TimeUnit;
 public class Times {
-    public String toString(Integer[] integers) {
+    public String toString(Long[] longs) {
         String RETURN = "";
-        RETURN += integers[3] + "s ";
-        RETURN += integers[2] + "ms ";
-        RETURN += integers[1] + "µs ";
-        RETURN += integers[0] + "ns";
+        RETURN += longs[3] + "s ";
+        RETURN += longs[2] + "ms ";
+        RETURN += longs[1] + "µs ";
+        RETURN += longs[0] + "ns";
         return RETURN;
     }
-    public void printTimes(Integer[] integers) {
-        if(integers[3] != 0) System.out.printf("%3d  s ", integers[3]);
-        if(integers[2] != 0) System.out.printf("%3d ms ", integers[2]);
-        if(integers[1] != 0) System.out.printf("%3d µs ", integers[1]);
-        System.out.printf("%3d ns\n", integers[0]);
+    public void printTimes(Long[] longs) {
+        if(longs[3] != 0) System.out.printf("%3d  s ", longs[3]);
+        if(longs[2] != 0) System.out.printf("%3d ms ", longs[2]);
+        if(longs[1] != 0) System.out.printf("%3d µs ", longs[1]);
+        System.out.printf("%3d ns\n", longs[0]);
     }
-    public Integer[] getTimes(Integer duration) {
-        Integer[] integers = new Integer[4];
-        integers[0] = Math.toIntExact((duration % 1000));
-        integers[1] = Math.toIntExact(TimeUnit.NANOSECONDS.toMicros(duration) % 1000);
-        integers[2] = Math.toIntExact(TimeUnit.NANOSECONDS.toMillis(duration) % 1000);
-        integers[3] = Math.toIntExact(TimeUnit.NANOSECONDS.toSeconds(duration) % 1000);
-        return integers;
+    public Long[] getTimes(Long duration) {
+        Long[] longs = new Long[4];
+        longs[0] = (duration % 1000);
+        longs[1] = TimeUnit.NANOSECONDS.toMicros(duration) % 1000;
+        longs[2] = TimeUnit.NANOSECONDS.toMillis(duration) % 1000;
+        longs[3] = TimeUnit.NANOSECONDS.toSeconds(duration) % 1000;
+        return longs;
     }
 }

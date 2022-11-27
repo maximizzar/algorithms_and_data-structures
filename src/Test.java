@@ -5,7 +5,7 @@ public class Test {
     private final SortAlgo sortAlgo = new SortAlgo();
     private final Times times = new Times();
 
-    public Integer[][] mergeSort(Integer length, Integer min, Integer max) {
+    public Long[][] mergeSort(Integer length, Integer min, Integer max) {
 
         //PreSortedAscending
         Integer[] array = arrayPreSortedAscending(length,min,max); System.gc();
@@ -13,31 +13,31 @@ public class Test {
         Long startTime = System.nanoTime();
 
         sortAlgo.mergeSort(array);
-        Integer[] preSortedAscending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedAscending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //PreSortedDescending
         array = arrayPreSortedDescending(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.mergeSort(array);
-        Integer[] preSortedDescending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedDescending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //Unsorted
         array = arrayUnsorted(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.mergeSort(array);
-        Integer[] unsorted =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] unsorted =
+                times.getTimes(System.nanoTime() - startTime);
 
-        Integer[][] RETURN = new Integer[3][];
+        Long[][] RETURN = new Long[3][];
         RETURN[0] = preSortedAscending;
         RETURN[1] = preSortedDescending;
         RETURN[2] = unsorted;
 
         return RETURN;
     }
-    public Integer[][] randomizedQuicksort(Integer length, Integer min, Integer max) {
+    public Long[][] randomizedQuicksort(Integer length, Integer min, Integer max) {
 
         //PreSortedAscending
         Integer[] array = arrayPreSortedAscending(length,min,max); System.gc();
@@ -45,31 +45,31 @@ public class Test {
         Long startTime = System.nanoTime();
 
         sortAlgo.randomizedQuicksort(array);
-        Integer[] preSortedAscending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedAscending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //PreSortedDescending
         array = arrayPreSortedDescending(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.randomizedQuicksort(array);
-        Integer[] preSortedDescending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedDescending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //Unsorted
         array = arrayUnsorted(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.randomizedQuicksort(array);
-        Integer[] unsorted =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] unsorted =
+                times.getTimes(System.nanoTime() - startTime);
 
-        Integer[][] RETURN = new Integer[3][];
+        Long[][] RETURN = new Long[3][];
         RETURN[0] = preSortedAscending;
         RETURN[1] = preSortedDescending;
         RETURN[2] = unsorted;
 
         return RETURN;
     }
-    public Integer[][] countingSort(Integer length, Integer min, Integer max) {
+    public Long[][] countingSort(Integer length, Integer min, Integer max) {
 
         //PreSortedAscending
         Integer[] array = arrayPreSortedAscending(length,min,max); System.gc();
@@ -77,31 +77,31 @@ public class Test {
         Long startTime = System.nanoTime();
 
         sortAlgo.countingSort(array,max);
-        Integer[] preSortedAscending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedAscending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //PreSortedDescending
         array = arrayPreSortedDescending(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.countingSort(array, max);
-        Integer[] preSortedDescending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedDescending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //Unsorted
         array = arrayUnsorted(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.countingSort(array, max);
-        Integer[] unsorted =
-        times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] unsorted =
+        times.getTimes(System.nanoTime() - startTime);
 
-        Integer[][] RETURN = new Integer[3][];
+        Long[][] RETURN = new Long[3][];
         RETURN[0] = preSortedAscending;
         RETURN[1] = preSortedDescending;
         RETURN[2] = unsorted;
 
         return RETURN;
     }
-    public Integer[][] heapsort(Integer length, Integer min, Integer max) {
+    public Long[][] heapsort(Integer length, Integer min, Integer max) {
 
         //PreSortedAscending
         Integer[] array = arrayPreSortedAscending(length, min, max); System.gc();
@@ -109,24 +109,24 @@ public class Test {
         Long startTime = System.nanoTime();
 
         sortAlgo.heapsort(array);
-        Integer[] preSortedAscending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedAscending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //PreSortedDescending
         array = arrayPreSortedDescending(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.heapsort(array);
-        Integer[] preSortedDescending =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] preSortedDescending =
+                times.getTimes(System.nanoTime() - startTime);
 
         //Unsorted
         array = arrayUnsorted(length,min,max); System.gc();
         startTime = System.nanoTime();
         sortAlgo.heapsort(array);
-        Integer[] unsorted =
-                times.getTimes(Math.toIntExact(System.nanoTime() - startTime));
+        Long[] unsorted =
+                times.getTimes(System.nanoTime() - startTime);
 
-        Integer[][] RETURN = new Integer[3][];
+        Long[][] RETURN = new Long[3][];
         RETURN[0] = preSortedAscending;
         RETURN[1] = preSortedDescending;
         RETURN[2] = unsorted;

@@ -90,7 +90,7 @@ public class SortAlgo {
         for (Integer value : array) c[value]++;
 
         //accumulate numbers in c
-        for (int i = 1; i <= biggestInt; i++) {
+        for (int i = 1; i < biggestInt; i++) {
             c[i] = c[i - 1] + c[i];
         }
 

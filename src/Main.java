@@ -41,12 +41,12 @@ public class Main {
                 else if (j == 1)    max = 100;
                 else if (j == 2)    max = 1000;
                 else if (j == 3)    max = 100000;
-                else max = Integer.MAX_VALUE - 1;
+                else max = Integer.MAX_VALUE - 3;
 
-                Integer[][] LUL1 = test.mergeSort(length, min, max);
-                Integer[][] LUL2 = test.randomizedQuicksort(length, min, max);
-                Integer[][] LUL3 = test.countingSort(length, min, max);
-                Integer[][] LUL4 = test.heapsort(length, min, max);
+                Long[][] LUL1 = test.mergeSort(length, min, max);
+                Long[][] LUL2 = test.randomizedQuicksort(length, min, max);
+                Long[][] LUL3 = test.countingSort(length, min, max);
+                Long[][] LUL4 = test.heapsort(length, min, max);
 
                 System.out.println(length + " ; " + "PreSortedAscending"    + " ; " + min + " - " + max +
                         " ; " + times.toString(LUL1[0]) +
