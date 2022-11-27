@@ -37,7 +37,7 @@ public class SortAlgo {
             return arr;
         }
 
-        Integer center = arr.length / 2;
+        int center = arr.length / 2;
         Integer[] left = new Integer[center];
         Integer[] right = new Integer[arr.length - center];
 
@@ -51,31 +51,37 @@ public class SortAlgo {
         mergeSort(left);
         mergeSort(right);
 
-        return merge(left, right);
+        merge(arr, left, right);
+        return arr;
     }
 
     //Merge
-    public static Integer[] merge(Integer[] left, Integer[] right) {
-        Integer[] result = new Integer[left.length + right.length];
+    private static void merge(Integer[] arr, Integer[] left, Integer[] right) {
         int leftIndex = 0;
         int rightIndex = 0;
         int resultIndex = 0;
-        while (leftIndex < left.length || rightIndex < right.length) {
-            if (leftIndex < left.length && rightIndex < right.length) {
-                if (left[leftIndex] <= right[rightIndex]) {
-                    result[resultIndex++] = left[leftIndex++];
-                } else {
-                    result[resultIndex++] = right[rightIndex++];
-                }
-            } else if (leftIndex < left.length) {
-                result[resultIndex++] = left[leftIndex++];
-            } else if (rightIndex < right.length) {
-                result[resultIndex++] = right[rightIndex++];
+        while (leftIndex < left.length && rightIndex < right.length) {
+            if (left[leftIndex] <= right[rightIndex]) {
+                arr[resultIndex] = left[leftIndex];
+                leftIndex++;
+            } else {
+                arr[resultIndex] = right[rightIndex];
+                rightIndex++;
             }
+            resultIndex++;
         }
-        return result;
-    }
+        while (leftIndex < left.length) {
+            arr[resultIndex] = left[leftIndex];
+            leftIndex++;
+            resultIndex++;
+        }
+        while (rightIndex < right.length) {
+            arr[resultIndex] = right[rightIndex];
+            rightIndex++;
+            resultIndex++;
 
+        }
+    }
     public int[] countingSort(Integer[] array, Integer biggestInt) {
         int[] c = new int[biggestInt + 1];
         int[] output = new int[array.length];
@@ -99,8 +105,8 @@ public class SortAlgo {
 
     }
 
-    public static void heapsort(Integer[] arr) {
-        if (arr == null) return;
+    public static Integer[] heapsort(Integer[] arr) {
+        if (arr == null) return arr;
         int heapSize = arr.length;
 
         for (int i = Math.max(0, (heapSize / 2) - 1); i >= 0; i--) {
@@ -111,6 +117,7 @@ public class SortAlgo {
             heapify(arr, i ,0);
 
         }
+        return arr;
     }
 
     public static void heapify(Integer[] arr, int heapSize, int i) {
@@ -135,9 +142,9 @@ public class SortAlgo {
 
 
     //Quick
-    public static void randomizedQuicksort(Integer[] arr) {
+    public static Integer[] randomizedQuicksort(Integer[] arr) {
         randomizedQuicksort(arr, 0, arr.length - 1);
-
+    return arr;
     }
 
     public static void randomizedQuicksort(Integer[] arr, int lowIndex, int highIndex) {
