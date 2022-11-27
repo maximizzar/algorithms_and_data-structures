@@ -1,10 +1,32 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Test test = new Test();
         Times times = new Times();
+        SortAlgo sortAlgo = new SortAlgo();
         Integer length = 10, min = 1, max = 1000;
 
+        arrayTest(length,min,max,sortAlgo,test);
         print(length,min,max,test,times);
+    }
+    public static void arrayTest(Integer length, Integer min, Integer max, SortAlgo sortAlgo, Test test) {
+        System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayUnsorted(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedAscending(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.mergeSort(test.arrayPreSortedDescending(length, min, max))));
+        System.out.println();
+        System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayUnsorted(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedAscending(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.heapsort(test.arrayPreSortedDescending(length, min, max))));
+        System.out.println();
+        System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayUnsorted(length, min, max),max)));
+        System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedAscending(length, min, max),max)));
+        System.out.println(Arrays.toString(sortAlgo.countingSort(test.arrayPreSortedDescending(length, min, max), max)));
+        System.out.println();
+        System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayUnsorted(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedAscending(length, min, max))));
+        System.out.println(Arrays.toString(sortAlgo.randomizedQuicksort(test.arrayPreSortedDescending(length, min, max))));
+        System.out.println();
     }
     public static void print(Integer length, Integer min, Integer max, Test test, Times times) {
         for (int i = 0; i < 5; i++) {
