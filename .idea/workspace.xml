@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12db08e8-3cc4-417c-8762-ef93455db109" name="Changes" comment="merge, randomquick und heap, bei merge probleme mit test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortAlgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,7 @@
     <configuration name="Hi Mom!" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="algorithms_and_data-structures" />
+      <option name="PROGRAM_PARAMETERS" value="-Xss1024m -Xmx4096M" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,5 +175,15 @@
     <MESSAGE value="comment out unnfinished methodcalls" />
     <MESSAGE value="max und length sorgen für crash" />
     <option name="LAST_COMMIT_MESSAGE" value="max und length sorgen für crash" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.OutOfMemoryError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
