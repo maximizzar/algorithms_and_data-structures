@@ -5,9 +5,9 @@ public class Main {
         Test test = new Test();
         Times times = new Times();
         SortAlgo sortAlgo = new SortAlgo();
-        Integer length = 10, min = 1, max = 1000;
+        Integer length = 10, min = 1, max = 10;
 
-        arrayTest(length,min,max,sortAlgo,test);
+        //arrayTest(length,min,max,sortAlgo,test);
         print(length,min,max,test,times);
     }
     public static void arrayTest(Integer length, Integer min, Integer max, SortAlgo sortAlgo, Test test) {
@@ -32,16 +32,16 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             if(i == 0)          length = 10;
             else if (i == 1)    length = 100;
-            //else if (i == 2)    length = 1000;
+            else if (i == 2)    length = 1000;
             //else if (i == 3)    length = 100000;
             //else                length = 100000000;
 
             for (int j = 0; j < 5; j++) {
                 if(j == 0)          max = 10;
                 else if (j == 1)    max = 100;
-                //else if (j == 2)    max = 1000;
-                //else if (j == 3)    max = 100000;
-                //else max = Integer.MAX_VALUE - 1;
+                else if (j == 2)    max = 1000;
+                else if (j == 3)    max = 100000;
+                else max = Integer.MAX_VALUE - 1;
 
                 Integer[][] LUL1 = test.mergeSort(length, min, max);
                 Integer[][] LUL2 = test.randomizedQuicksort(length, min, max);
